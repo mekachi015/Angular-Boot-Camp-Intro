@@ -14,3 +14,10 @@ quote_type = single
 [*.md]
 max_line_length = off
 trim_trailing_whitespace = false
+
+
+# Checking within the repositiry not within the project
+
+# node_modules - checks everywhere, ignores files listed
+
+# /node_modules check within the current folder

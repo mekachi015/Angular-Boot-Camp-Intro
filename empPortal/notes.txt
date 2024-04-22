@@ -1,0 +1,195 @@
+package-lock json file
+
+package-lock.json is automatically generated for any operations where npm 
+modifies either the node_modules tree, or package.json.
+
+angular json file 
+The angular. json file at the root level of an Angular workspace provides 
+workspace-wide and project-specific configuration defaults. These are used for
+build and development tools provided by the Angular CLI. Path values given in
+the configuration are relative to the root workspace directory.
+
+package.json
+contains descriptive and functional metadata about a project, such as a name,
+version, and dependencies. The file provides the npm package manager with 
+various information to help identify the project and handle dependencies
+
+tsconfig.app.json
+The app tsconfig.app.json provides the options used when working with code in 
+the app folder. This allows you to further customize the options from tsconfig.json
+
+Angular components
+Components are the main building blocks for Angular applications. 
+Each component consists of: An HTML template that declares what renders on the
+page. A TypeScript class that defines behavior. A CSS selector that defines how 
+the component is used in a template.
+
+CSS 
+Casscading Style Sheets is the standard styling language for styling language for the web
+
+SCSS (Sassy Casscading Style Sheets) - Provides additional features such as variables, mixins and nesting
+
+
+Navigation vs Routing
+Routing refers to the process of mapping URLs to specific
+components or views in your application. This allows users to 
+navigate to different parts of your app by clicking on links or 
+typing in specific URLs. (creating a path)
+
+Navigation, on the other hand, refers to the process of moving
+between these different routes or views.(Following the path)
+
+Directives
+In Angular, Directives are defined as classes that can add new 
+behavior to the elements in the template or modify existing 
+behavior. 
+
+Router-Outlet
+Routing refers to the process of mapping URLs to specific 
+components or views in your application. This allows users to 
+navigate to different parts of your app by clicking on links or 
+typing in specific URLs. Navigation, on the other hand, refers to 
+the process of moving between these different routes or views
+
+ngModel 
+The ngmodel directive binds the value of HTML controls 
+(input, select, textarea) to application data. With the ng-model 
+directive you can bind the value of an input field to a variable 
+created in Angular. The binding goes both ways.
+
+data binding
+Data binding is the process that couples two data sources 
+together and synchronizes them. With data binding, a change to an 
+element in a data set automatically updates in the bound data set.
+
+One way data binding (click on something and something happens)
+One-way data binding in Angular (i.e. unidirectional binding) 
+is a way to bind data from the component to the view (DOM) or 
+vice versa - from view to the component. It is used to display 
+information to the end-user which automatically stays synchronized
+with each change of the underlying data.
+
+two way data binding
+The two-way data binding in Angular enables data to flow from 
+the component to the view and the other way round. It is used to
+display information to the end-user and allows them to make changes 
+to the underlying data using the UI.
+
+Templete Driven Forms and Reactive
+
+Reactive Forms:
+
+Imagine you're building a car from scratch. With reactive forms, 
+you carefully plan and assemble each part of the car 
+(like the engine, wheels, and chassis) in a controlled workshop 
+environment. You use specialized tools and follow a precise blueprint
+to ensure everything fits together perfectly. Once assembled, each part
+is securely fixed, and you can monitor its performance closely. 
+If you need to make adjustments or repairs, you can easily access 
+and modify individual components.
+
+Template-Driven Forms:
+
+Now, let's consider a scenario where you're customizing a 
+pre-made car model. Template-driven forms are like modifying a 
+ready-made car where certain components are accessible from the 
+dashboard or through visible controls (like knobs and switches).
+You can change the interior settings, adjust the seat positions, 
+or customize the dashboard layout directly. However, the modifications 
+are somewhat limited to what the car model allows, and you rely more on 
+the car's existing features and controls for adjustments.
+
+Authentication Vs Autherization
+
+Authentication: authentication verifies the identity of a user or service
+
+Autherization : authorization determines their access rights.
+
+Auth gaurds 
+In Angular, Auth Guards is a technique used to protect our routes based on
+user authentication status. It will manage different access levels between 
+authenticated and non-authenticated users.
+
+Allows you to protect specific routes or features in your application, ensuring that
+only autherzied --- protecting specific routes(can not checkout without login in)
+
+installing temp server for json files 
+npm install -g json-server
+
+JSON FILE 
+A JSON file is a file that stores simple data structures and objects in JavaScript 
+Object Notation (JSON) format, which is a standard data interchange format. 
+It is primarily used for transmitting data between a web application and a server. 
+JSON files are lightweight, text-based, human-readable, and can be edited using a 
+text editor.
+
+always include stuff before using them aka import
+
+Constructor in angular 
+An Angular constructor is a function that is used to initialize an Angular application.
+The constructor is run when the application is first created, and it is responsible 
+for setting up the Angular environment.
+
+we should use constructor() to setup Dependency Injection, Initialization of class fields etc. 
+
+ngOnInit(): ngOnInit is a lifecycle hook in Angular that is called after the constructor is called and 
+after the component's inputs have been initialized. It is used to perform any additional initialization 
+that is required for the component. ngOnInit is commonly used to call services or to set up subscriptions.
+
+Services 
+Service is a broad category encompassing any value, function, or feature that an application needs. 
+A service is typically a class with a narrow, well-defined purpose. It should do something specific 
+and do it well. 
+Think of a customer, a chef and a waiter.
+
+Restaurant (Angular Application):
+Think of your restaurant as an Angular application. It consists of various components (like tables, kitchen,
+cashier) that work together to deliver a great dining experience.
+
+Kitchen (Service):
+The kitchen in your restaurant represents an Angular service. It's a centralized place where cooking and 
+food preparation happen. Similarly, a service in Angular is a centralized place for managing specific
+functionalities and data operations.
+
+Menu Items (Data):
+Menu items on your restaurant's menu are like data objects or information within your Angular application. 
+These could be customer orders, product listings, or any other type of data.
+
+Chef (Component):
+The chef in your kitchen represents an Angular component. Each chef (or component) has specific tasks 
+(or responsibilities) such as preparing dishes, interacting with customers, or managing orders.
+
+Order Management (Service Interaction):
+When a waiter (component) receives an order (request) from a customer (user interaction), 
+they communicate with the kitchen (service) to prepare the dish (process data) and serve it back to the 
+customer (update the UI).
+
+//this bit of code is within login.component.Ts
+this.http.get<any>("Http...").subscribe(res =>{
+    const user = res.find((details:any) => {
+        return details.email === this.loginForm.value.email && details.password == this.loginForm.value
+    }) ;
+
+    if (user){
+        alert("Successfully logged in")
+        this.loginForm.reset();
+        this.router.navigate(["Home"]) // import the router on app module TS
+    }
+    else {
+        alertt ("You are not welcome chief!)
+    }
+}) , err =>
+    {
+        alert ("usser not found")
+    }
+
+.subscribe Listens to the get and waits for a response
+
+any is used when you do not specify the data type eg Double, inter, string
+
+=> - arrow function
+
+The => operator in Angular (and in JavaScript/TypeScript) is known as the arrow function or fat arrow
+function syntax. It is used to define anonymous functions or function expressions with a more concise 
+syntax compared to traditional function expressions.
+
