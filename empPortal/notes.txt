@@ -132,15 +132,12 @@ for setting up the Angular environment.
 
 we should use constructor() to setup Dependency Injection, Initialization of class fields etc. 
 
-ngOnInit(): ngOnInit is a lifecycle hook in Angular that is called after the constructor is called and 
-after the component's inputs have been initialized. It is used to perform any additional initialization 
-that is required for the component. ngOnInit is commonly used to call services or to set up subscriptions.
+ngOnInit(): ngOnInit is a lifecycle hook in Angular that is called after the constructor 
+is called and after the component's inputs have been initialized. It is used to perform
+any additional initialization that is required for the component. 
+ngOnInit is commonly used to call services or to set up subscriptions.
 
-Services 
-Service is a broad category encompassing any value, function, or feature that an application needs. 
-A service is typically a class with a narrow, well-defined purpose. It should do something specific 
-and do it well. 
-Think of a customer, a chef and a waiter.
+
 
 Restaurant (Angular Application):
 Think of your restaurant as an Angular application. It consists of various components (like tables, kitchen,
@@ -193,3 +190,98 @@ The => operator in Angular (and in JavaScript/TypeScript) is known as the arrow 
 function syntax. It is used to define anonymous functions or function expressions with a more concise 
 syntax compared to traditional function expressions.
 
+
+Service (ng generate service serviceName)
+
+Service is a broad category encompassing any value, function, or feature that an application needs. 
+A service is typically a class with a narrow, well-defined purpose. It should do something specific 
+and do it well. Think of a customer, a chef and a waiter.
+
+Services are good for tasks such as fetching data from the server, validating user input,
+or logging directly to the console. By defining such processing tasks in an injectable
+service class, you make those tasks available to any component. 
+
+asynchronus : is an adjective describing objects or events that are not coordinated in time.
+
+using observables and stream of values
+Observables are a technique for event handling, asynchronous programming, and handling 
+multiple values emitted over time.
+
+asynchronous: morning routines (you wake up, brush your teeth,bath and get dressed) morini
+routines.
+asynchronous Programming: refers to the occurrence of events independent of the main
+program flow and ways to deal with such events.
+
+subscirbe - think of how you wont get updates if you are not subscribed to the channel.
+
+ 
+awaits and asynn
+
+async refers to the occurrence of events independent of the main program flow and ways 
+to deal with such events.
+
+async and await provide a more synchronous-style approach to working with promises, 
+making asynchronous code easier to read and write.
+
+Https commumication imports to help communicate with the json server
+
+
+//This is all done in the service.ts
+
+import {observable} from rxjs
+apis can be declared in a service :
+export class className{
+    
+    private Url = '' //The url of the API goes into these quotations
+
+    constructor (private http: HTTpclient);
+
+}
+
+
+OBSERVABLES and OBSERVER 
+
+Observables
+Definition: An Observable is a representation of a stream of data or events that can be 
+observed over time.
+
+Characteristics:
+Emits multiple values over time.
+Can emit values asynchronously.
+Supports operators to transform, filter, combine, and manipulate data streams.
+Can represent various sources of asynchronous data (e.g., HTTP requests, user events, 
+timers).
+
+Observers 
+Observers
+Definition: An Observer is an object that defines callbacks to handle the items (values)
+and notifications (completion or error) delivered by an Observable.
+
+Characteristics:
+Receives emitted values from an Observable.
+Handles next values, error notifications, and complete notifications.
+Can be passed to the subscribe method of an Observable to listen to data emissions.
+
+
+console log for testing, work on the console log as much as possible
+remove console log for sprint reviews
+
+//How to write an error message
+(error) =>
+{
+    console.log('You have entered the wrong detaisl')
+}
+
+ngFor "let emp of empData"
+
+*means comma 
+
+div class = "class name" *ngFor "let emp of empData"
+
+emp returns actual data and not the index of the data, itterates through empData
+
+dats binding {{}}interpolation  - Data binding in Angular is the process of connecting the 
+application's data (model) with the UI (view) components, ensuring that any changes 
+in the model are reflected in the view, and vice versa.
+
+img [src] = " "
